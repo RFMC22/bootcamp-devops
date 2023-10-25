@@ -23,7 +23,7 @@ pipeline{
     stage('Despliegue'){
       steps{
         script{
-            bat 'docker run bootcampdevops/bootcamp-devops'
+            bat 'docker run -p 8080:8080 bootcampdevops/bootcamp-devops'
         }
       }
     }
