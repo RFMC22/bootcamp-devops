@@ -1,6 +1,6 @@
 pipeline{
   environment {
-    registryCredential = 'dockerpass'
+    registryCredential = 'docker-pwd'
   }
   agent any
   tools{
@@ -24,7 +24,7 @@ pipeline{
       steps{
         script{
           withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerpass')]) {
-            bat 'docker login -u renee2209 -p ${dockerpass}'
+            bat 'docker login -u renee2209 -p ${docker-pwd}'
             bat 'docker push bootcampdevops/bootcamp-devops'
           }
         }
