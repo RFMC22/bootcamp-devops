@@ -1,6 +1,6 @@
 pipeline{
   environment {
-    registryCredential = 'docker-pwd'
+    registryCredential = credentials('docker-pwd')
   }
   agent any
   tools{
