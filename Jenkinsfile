@@ -1,6 +1,6 @@
 pipeline{
   environment {
-    registryCredential = 'bootuserpass'
+    registryCredential = 'docker-pwd'
   }
   agent any
   tools{
@@ -23,9 +23,8 @@ pipeline{
     stage('Push imagen al hub'){
       steps{
         script{
-          docker.withRegistry('', registryCredential){
+            bat 'docker login -u renee2209 -p ${docker-pwd}'
             bat 'docker push bootcampdevops/bootcamp-devops'
-          }
         }
       }
     }
