@@ -30,7 +30,7 @@ class MicroApplicationTests {
 	@DisplayName("Controlador nulo")
 	@Test
 	void controllerNulo() {
-		//assertThat(controller).isNull();
+		assertThat(controller).isNull();
 	}
 
 	@DisplayName("Servicio responde")
