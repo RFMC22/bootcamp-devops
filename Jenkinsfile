@@ -13,16 +13,16 @@ pipeline{
         bat 'mvn clean install'
       }
     }
+    stage('Test servicio'){
+      steps{
+        bat 'mvn test'
+      }
+    }
     stage('Build docker imagen'){
       steps{
         script{
           bat 'docker build -t bootcampdevops/bootcamp-devops .'
         }
-      }
-    }
-    stage('Test servicio'){
-      steps{
-        bat 'mvn test'
       }
     }
     stage('Despliegue'){
