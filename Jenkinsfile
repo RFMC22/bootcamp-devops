@@ -1,4 +1,7 @@
 pipeline{
+  environment {
+    registryCredential = 'dockerpass'
+  }
   agent any
   tools{
     maven 'archivoMaven'
