@@ -10,5 +10,12 @@ pipeline{
         bat 'mvn clean install'
       }
     }
+    stage('Build docker image'){
+      steps{
+        script{
+          bat 'docker build -t bootcampdevops/bootcamp-devops .'
+        }
+      }
+    }
   }
 }
