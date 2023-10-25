@@ -23,8 +23,9 @@ pipeline{
     stage('Push imagen al hub'){
       steps{
         script{
-            bat 'docker login -u renee2209 -p ${docker-pwd}'
-            bat 'docker push bootcampdevops/bootcamp-devops'
+          bart 'docker logout'
+          bat 'docker login -u renee2209 -p ${docker-pwd}'
+          bat 'docker push bootcampdevops/bootcamp-devops'
         }
       }
     }
