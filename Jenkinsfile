@@ -20,14 +20,5 @@ pipeline{
         }
       }
     }
-    stage('Push imagen al hub'){
-      steps{
-        script{
-          docker.withRegistry('', withRegistry){
-            bat 'docker push bootcampdevops/bootcamp-devops'
-          }
-        }
-      }
-    }
   }
 }
