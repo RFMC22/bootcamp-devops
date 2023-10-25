@@ -20,6 +20,11 @@ pipeline{
         }
       }
     }
+    stage('Test servicio'){
+      steps{
+        bat 'mvn test'
+      }
+    }
     stage('Despliegue'){
       steps{
         script{
