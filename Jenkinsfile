@@ -17,5 +17,15 @@ pipeline{
         }
       }
     }
+    stage('Push imagen al hub'){
+      steps{
+        script{
+          withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerpass')]) {
+            bat 'docker login -u renee2209 -p ${dockerpass}'
+            bat 'docker push bootcampdevops/bootcamp-devops'
+          }
+        }
+      }
+    }
   }
 }
